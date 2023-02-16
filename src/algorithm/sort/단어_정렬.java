@@ -1,7 +1,8 @@
 package algorithm.sort;
 
-import java.util.PriorityQueue;
+import java.util.Comparator;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class 단어_정렬 {
 
@@ -9,20 +10,10 @@ public class 단어_정렬 {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
 
-        PriorityQueue<String> que = new PriorityQueue<>((s1, s2) -> {
-            int length1 = s1.length();
-            int length2 = s2.length();
-            if (length1 == length2) return String.CASE_INSENSITIVE_ORDER.compare(s1, s2);
-            else return Integer.compare(length1, s2.length());
-        });
-        for (int i = 0; i < N; i++) {
-            String str = sc.next();
-            if (!que.contains(str)) que.offer(str);
-        }
+        TreeSet<String> set = new TreeSet<>(Comparator.comparingInt(String::length).thenComparing(String::compareTo));
+        for (int i = 0; i < N; i++) set.add(sc.next());
 
-        while (!que.isEmpty()) {
-            System.out.println(que.poll());
-        }
+        set.forEach(System.out::println);
     }
 }
 
