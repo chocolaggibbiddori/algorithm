@@ -12,15 +12,26 @@ public class 소인수분해 {
         if (N == 1) return;
 
         int i = 2;
-        while (N > 1) {
+        while (!isPrimeNumber(N)) {
             while (N % i == 0) {
                 N /= i;
                 sb.append(i).append("\n");
             }
             i++;
         }
+        if (N != 1) sb.append(N);
 
-        System.out.println(sb.isEmpty() ? N : sb);
+        System.out.println(sb);
+    }
+
+    private static boolean isPrimeNumber(int num) {
+        if (num == 1) return true;
+
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+
+        return true;
     }
 }
 
