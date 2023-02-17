@@ -1,4 +1,4 @@
-package algorithm.search;
+package algorithm.datastructure;
 
 import java.io.*;
 import java.util.StringTokenizer;

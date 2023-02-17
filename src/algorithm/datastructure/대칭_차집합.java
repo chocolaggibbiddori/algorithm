@@ -1,4 +1,4 @@
-package algorithm.search;
+package algorithm.datastructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;

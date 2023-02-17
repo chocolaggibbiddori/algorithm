@@ -1,4 +1,4 @@
-package algorithm.search;
+package algorithm.datastructure;
 
 import java.util.Scanner;
 import java.util.TreeSet;
