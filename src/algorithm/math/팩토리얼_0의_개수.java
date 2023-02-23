@@ -15,11 +15,15 @@ public class 팩토리얼_0의_개수 {
 
         while (N > 0) {
             int M = N--;
-            M = countNumberOfX(M, 2);
-            countNumberOfX(M, 5);
+            recordNumberOfLastZero(M);
         }
 
         System.out.println(Math.min(map.getOrDefault(2, 0), map.getOrDefault(5, 0)));
+    }
+
+    private static void recordNumberOfLastZero(int M) {
+        M = countNumberOfX(M, 2);
+        countNumberOfX(M, 5);
     }
 
     private static int countNumberOfX(int M, int x) {
