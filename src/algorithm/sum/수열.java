@@ -1,4 +1,4 @@
-package algorithm.twopointer;
+package algorithm.sum;
 
 import java.io.BufferedReader;
 import java.io.IOException;
