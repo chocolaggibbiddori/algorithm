@@ -1,8 +1,6 @@
 package algorithm.sum;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class 인간_컴퓨터_상호작용 {
@@ -13,12 +11,14 @@ public class 인간_컴퓨터_상호작용 {
         int q = Integer.parseInt(br.readLine());
 
         int[][] S = new int[s.length()][26];
-        for (int i = 0; i < s.length(); i++) {
+        S[0][s.charAt(0) - 'a']++;
+        for (int i = 1; i < s.length(); i++) {
             int c = s.charAt(i) - 'a';
-
-            for (int j = i; j < s.length(); j++) S[j][c]++;
+            System.arraycopy(S[i - 1], 0, S[i], 0, 26);
+            S[i][c]++;
         }
 
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
         while (q-- > 0) {
             st = new StringTokenizer(br.readLine());
@@ -26,9 +26,13 @@ public class 인간_컴퓨터_상호작용 {
             int start = Integer.parseInt(st.nextToken());
             int end = Integer.parseInt(st.nextToken());
 
-            if (start > 0) System.out.println(S[end][alphabet] - S[start - 1][alphabet]);
-            else System.out.println(S[end][alphabet]);
+            if (start == 0) bw.write(S[end][alphabet] + "\n");
+            else bw.write(S[end][alphabet] - S[start - 1][alphabet] + "\n");
         }
+
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
 
