@@ -15,12 +15,12 @@ public class 주유소 {
         for (int i = 0; i < n - 1; i++) roads[i] = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(sc.nextLine());
-        int answer = 0;
+        long answer = 0;
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < n - 1; i++) {
             int price = Integer.parseInt(st.nextToken());
             if (min > price) min = price;
-            answer += min * roads[i];
+            answer += (long) min * roads[i];
         }
 
         System.out.println(answer);
