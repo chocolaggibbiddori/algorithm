@@ -1,4 +1,4 @@
-package algorithm.datastructure;
+package algorithm.datastructure.set;
 
 import java.util.Scanner;
 import java.util.TreeSet;

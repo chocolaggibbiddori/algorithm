@@ -1,4 +1,4 @@
-package algorithm.deque;
+package algorithm.datastructure.deque;
 
 import java.io.*;
 import java.util.Deque;
