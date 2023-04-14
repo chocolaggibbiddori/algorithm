@@ -11,15 +11,10 @@ public class 과제_진행하기 {
         PriorityQueue<Subject> subjectQueue = new PriorityQueue<>();
         for (String[] plan : plans) subjectQueue.offer(new Subject(plan));
 
-        Subject nowSubject = null;
+        Subject nowSubject = subjectQueue.poll();
         Stack<Subject> stopSubjectStack = new Stack<>();
         while (!subjectQueue.isEmpty()) {
             Subject nextSubject = subjectQueue.poll();
-
-            if (nowSubject == null) {
-                nowSubject = nextSubject;
-                continue;
-            }
 
             int finishTime = nowSubject.startTime + nowSubject.playTime;
             if (finishTime <= nextSubject.startTime) {
