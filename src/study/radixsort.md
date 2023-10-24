@@ -30,7 +30,7 @@ public class 수_정렬하기_3 {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
 
-        Queue<String>[] queueArr = new Queue[N];
+        Queue<String>[] queueArr = new Queue[10];
         for (int i = 0; i < queueArr.length; i++) {
             queueArr[i] = new LinkedList<>();
         }
